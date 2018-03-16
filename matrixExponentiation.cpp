@@ -34,7 +34,7 @@ struct mat
   ll m[2][2];
 };
 
-mat mul(mat a,mat b)//for n>2,use standard matrix multiplication algorithm
+mat mul(mat a,mat b)//better to use standard matrix multiplication algorithm
 {
   mat c; 
   c.m[0][0]=((a.m[0][0]*b.m[0][0])%mod + (a.m[0][1]*b.m[1][0])%mod ) % mod;

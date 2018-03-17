@@ -1,7 +1,4 @@
-/* 
-  A great application of BIT: After Q range queries, find occurences of 
-                               each index in all queries.
-*/
+
 #include<bits/stdc++.h>
  using namespace std;
  

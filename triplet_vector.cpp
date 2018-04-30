@@ -11,10 +11,10 @@ After sorting it should look like this:
 vector<array<int,3>> vec;
 int n,x,y,z;
 cin>>n;
-rep(i,1,n)
+while(n--)
 {
     cin>>x>>y>>z;
-    vec.pb({x,y,z});
+    vec.push_back({x,y,z});
 }
 
 sort(vec.begin(), vec.end());

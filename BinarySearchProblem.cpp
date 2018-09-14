@@ -26,7 +26,6 @@ constraint:
 #define int  long long
 #define vi  vector<int>
 #define rep(i,n)  for(int i=0;i<n;i++)
-#define ub  upper_bound 
 #define all(c)  c.begin(),c.end()
 #define asort(c)  sort(all(c))
  

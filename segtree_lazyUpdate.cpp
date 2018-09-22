@@ -42,8 +42,8 @@ void rangeUpdate(int node,int a,int b,int i,int j,int val)
 
 		if(a!=b)
 		{
-			lazy[2*node] += lazy[node];
-			lazy[2*node + 1] += lazy[node];
+			lazy[2*node] += val;
+			lazy[2*node + 1] += val;
 		}
 		return ;
 	}

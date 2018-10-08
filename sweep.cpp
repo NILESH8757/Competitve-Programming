@@ -9,14 +9,14 @@
 #include <utility>
  
 std::vector<std::pair<int,std::pair<int,int>> > st;
-std::set<int> s ;
 
 void sweep(int n , int q )
 {
      std::vector<int>ans(q,0);
      sort(st.begin(),st.end());
      
-     int nn=st.size();
+     int sum=0,nn=st.size();
+ 
      for(int i = 0 ; i < nn ; i++ )
      {
          int xx = st[i].first ;
@@ -24,16 +24,15 @@ void sweep(int n , int q )
          int id = st[i].second.second ;
          if(type == -1)
          {
-            s.insert(id) ;
+            sum++;
          }
          else if(type == 1 )
          {
-            if(s.find(id)!=s.end())
-            s.erase(id) ;
+            sum--;
          }
          else 
          {
-             ans[id]=s.size();
+             ans[id]=sum;
          }
      }
      for(int i = 0 ; i < q ; i++ )

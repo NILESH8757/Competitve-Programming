@@ -50,7 +50,7 @@ int32_t main()
     freopen("output.txt","w",stdout);
   #endif
 
-  
+  //write from here
  
   timer();
   return 0;

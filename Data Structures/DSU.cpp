@@ -13,16 +13,15 @@ void init()
   connected=n;
 }
 
-int find_set(int v) 
+int find_set(int v)//find() operation with path-compression optimization
 {
   if(v==par[v])
     return v;
   return par[v]=find_set(par[v]);
 }
 
-void merge_set(int a,int b)
+void merge_set(int a,int b)  //union by rank
 {
-  //union by rnk
   a=find_set(a);
   b=find_set(b);
   if(a==b) 

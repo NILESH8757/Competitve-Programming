@@ -1,103 +1,133 @@
-//problem link: https://www.hackerrank.com/challenges/fibonacci-finding-easy/problem
+//Taken from Ashishgup's repo
+//https://github.com/Ashishgup1/Competitive-Coding/blob/master/Matrix%20Struct.cpp
+//problem: https://codeforces.com/contest/1117/problem/D
 #include<bits/stdc++.h>
  using namespace std;
- 
-#define FIO                     ios_base::sync_with_stdio(false); cin.tie(0)
-#define mod                     1000000007
-#define setbits                 __builtin_popcount
-#define gcd                     __gcd
-#define rep(i,a,b)              for(int i=a;i<=b;i++)
-#define repr(i,b,a)             for(int i=b;i>=a;i--)
-#define foreach(itr, c)         for( __typeof__( (c).begin()) itr = (c).begin();  itr != (c).end(); ++itr)
-#define all(a)                  a.begin(), a.end()
-#define in(b,a)                 ( (b).find(a) != (b).end())// in container b,
-#define pb                      push_back                  // check for element a
-#define fill(a,v)               memset(a, v, sizeof a)
-#define endl                    "\n"
-#define ff                      first
-#define ss                      second
-#define mp                      make_pair
-#define minin(a)                *min_element (all(a))
-#define maxin(a)                *max_element(all(a))
-#define asort(c)                sort(all(c))
-#define dsort(c)                sort(all(c), greater<int>())
-typedef  long long                   ll;
-typedef  vector<int>                 vi;
-typedef  pair<int, int>              ii;
-typedef  vector<ii>                 vii;
-typedef  set<int>                    si;
-typedef  map<int, int>              mii;
 
+#define io ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define int long long
+#define endl '\n'
+#define eps  1e-9
+const double pi=acos(-1);
+const int MOD=1e9+7;
+//____________________
 
-struct mat
+int n,m;
+const int SZ = 105;
+
+int add(int a, int b)
 {
-  ll m[2][2];
+  int res = a + b;
+  if(res >= MOD)
+    return res - MOD;
+  return res;
+}
+
+int mult(int a, int b)
+{
+  long long res = a;
+  res *= b;
+  if(res >= MOD)
+    return res % MOD;
+  return res;
+}
+
+struct matrix
+{
+  int arr[SZ][SZ];
+
+  void makezeros()
+  {
+    memset(arr,0,sizeof(arr));
+  }
+
+  void reset() //set matrix according to problem
+  {
+    makezeros();
+    arr[0][0] = 1;
+    arr[0][m-1] = 1;
+
+    for(int i = 1; i < m; i++)
+      arr[i][i-1] = 1;
+  }
+
+  void makeiden()
+  {
+    makezeros();
+    for(int i=0;i<m;i++)
+    {
+      arr[i][i] = 1;
+    }
+  }
+
+  int res() //get result according to problem
+  { 
+    int ans = 0;
+    for(int i = 0; i < m; i++)
+     ans += arr[m-1][i];
+    return ans%MOD;
+  }
+
+  matrix operator + (const matrix &o) const
+  {
+    matrix res;
+    for(int i=0;i<SZ;i++)
+    {
+      for(int j=0;j<SZ;j++)
+      {
+        res.arr[i][j] = add(arr[i][j], o.arr[i][j]);
+      }
+    }
+    return res;
+  }
+
+  matrix operator * (const matrix &o) const
+  {
+    matrix res;
+    for(int i=0;i<SZ;i++)
+    {
+      for(int j=0;j<SZ;j++)
+      {
+        res.arr[i][j] = 0;
+        for(int k=0;k<SZ;k++)
+        {
+          res.arr[i][j] = add(res.arr[i][j] , mult(arr[i][k] , o.arr[k][j]));
+        }
+      }
+    }
+    return res;
+  }
 };
 
-mat mul(mat a,mat b)//better to use standard matrix multiplication algorithm
+matrix power(matrix a, int b)
 {
-  mat c; 
-  c.m[0][0]=((a.m[0][0]*b.m[0][0])%mod + (a.m[0][1]*b.m[1][0])%mod ) % mod;
-  c.m[0][1]=((a.m[0][0]*b.m[0][1])%mod + (a.m[0][1]*b.m[1][1])%mod ) % mod;
-  c.m[1][0]=((a.m[1][0]*b.m[0][0])%mod + (a.m[1][1]*b.m[1][0])%mod ) % mod;
-  c.m[1][1]=((a.m[1][0]*b.m[0][1])%mod + (a.m[1][1]*b.m[1][1])%mod ) % mod;
-  
-  return c;
-}
-
-mat matExp(mat mt,ll n)
-{
-
-  if(n==1)
-    return mt;
-  else
+  matrix res;
+  res.makeiden();
+  while(b)
   {
-    if(n%2==0)
+    if(b & 1)
     {
-      mat temp=matExp(mt,n/2);
-      return mul(temp,temp);
+      res = res * a;
     }
-    else
-      return mul(mt,matExp(mt,n-1));
+    a = a * a;
+    b >>= 1;
   }
+  return res;
 }
 
-int main()
+int32_t main() 
 {
-  FIO;
-  #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin); 
-    freopen("output.txt", "w", stdout);
-  #endif
-
-  int t;
-  cin>>t;
-  mat res,temp;
-  ll ans;
-  while(t--)
+  cin >> n >> m;
+  if(n < m)
   {
-    ll a,b,n;
-
-   cin>>a>>b>>n;
-
-   res.m[0][0]=1;
-   res.m[0][1]=1;
-   res.m[1][0]=1;
-   res.m[1][1]=0;
-   
-   if(n==1)
-   {
-    cout<<b<<endl; 
-     continue;
-   }
-
-   temp=matExp(res,n-1);
-
-   ans=(((temp.m[0][0])*b)%mod + ((temp.m[0][1])*a)%mod)%mod;
-  
-   cout<<ans<<endl;
-
+    cout << "1\n";
+    return 0;
   }
-  
- return 0;
+
+  matrix mat;
+  mat.reset();
+  mat = power(mat,n);
+  cout << mat.res() << endl;
+
+  return 0;
 }

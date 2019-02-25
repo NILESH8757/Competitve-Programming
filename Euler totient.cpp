@@ -7,6 +7,8 @@ Problem: https://www.hackerearth.com/practice/data-structures/advanced-data-stru
 */
 
 const int MAXE=1e5+5;
+const int N=1e6+5;
+
 int phi[MAXE],F[MAXE];
 
 void compute()
@@ -32,3 +34,18 @@ void compute()
         }
     }
 }
+
+
+//Computing Euler's totient function for all natural numbers <= N in O(N*log N):
+void euler_totient()
+{
+    for (int i = 1; i <= N; ++i) 
+    {
+      phi[i] += i;
+      for (int j = 2 * i; j <= N; j += i) 
+      {
+        phi[j] -= phi[i];
+      }
+    }
+}
+//in linear time using linear sieve: https://codeforces.com/blog/entry/10119

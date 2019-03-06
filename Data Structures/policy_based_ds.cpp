@@ -69,3 +69,5 @@ int32_t main()
   
  return 0;
 }
+
+// Problem 2 : https://www.codechef.com/MARCH19B/problems/SUBPRNJL

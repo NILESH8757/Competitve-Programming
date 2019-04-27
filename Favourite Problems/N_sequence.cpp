@@ -2,7 +2,7 @@
   using integers from 1 to K, generate N sequnces each of which is of length D such that no two sequence is identical.
   Print -1 if not possible.
   
-  source: https://codeforces.com/problemset/problem/459/C
+  Problem: https://codeforces.com/problemset/problem/459/C
 */
 
 
@@ -25,11 +25,6 @@ int possible(int people, int buses, int days)
 
 int main()
 {
-    #ifndef ONLINE_JUDGE
-     freopen("input.txt", "r", stdin);
-     freopen("output.txt", "w", stdout);
-    #endif 
-
     int N, K, D;
 
     scanf("%d %d %d", &N, &K, &D);

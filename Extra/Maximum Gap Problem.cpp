@@ -1,15 +1,9 @@
 #include<bits/stdc++.h>
  using namespace std;
 
-#define  __  ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define  endl  '\n'
-const double pi = acos(-1);
-const int mod = 1e9 + 7;
-//______________________
-
 /*
-  Problems: Given an unsorted array A of size n, find maximum 
-            gap between two adjacent elements in its sorted form in O(n).
+  Problem Statement: Given an unsorted array A of size n, find maximum 
+                     gap between two adjacent elements in its sorted form in O(n).
 
   Editorial: https://leetcode.com/problems/maximum-gap/solution/
 */

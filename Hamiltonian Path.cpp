@@ -12,20 +12,20 @@ bool checkHamiltonianPath(int adj[][MAXN], int n)
 
     for(int i = 0; i < (1 << n); i++)
     {
-        for(int j = 0; j < n; j++)
-        {
-        	if(i & (1 << j))
-        	{
-              for(int k = 0; k < n; k++)
-              {
-                  if(i & (1 << k) && adj[k][j] && k != j && dp[k][i ^ (1 << j)])
-                  {
-                    dp[j][i]=true;
-                    break;
-                  }
-              }
-          }
-        }
+       for(int j = 0; j < n; j++)
+       {
+         if(i & (1 << j))
+         {
+           for(int k = 0; k < n; k++)
+           {
+             if(i & (1 << k) && adj[k][j] && k != j && dp[k][i ^ (1 << j)])
+             {
+               dp[j][i]=true;
+               break;
+             }
+           }
+         }
+       }
     }
 
     for(int i=0; i<n; i++)

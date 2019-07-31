@@ -1,2 +1,2 @@
 # Competitve-Programming
-Personal implementations of algorithms/data structures I use in coding contests.
+Personal library of algorithms/data structures I use in coding contests. Either implemented by me or taken from various sources.

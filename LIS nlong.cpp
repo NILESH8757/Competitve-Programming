@@ -2,7 +2,7 @@
 
 int LIS(vector<int>& nums) 
 {
-    vector<int> res; // at the end, it shall have any longest increasing subsequence
+    vector<int> res; // this array shall not contain any valid LIS at the end, but it's sizse will denote lenght of lis
     
     for(int i = 0; i < nums.size(); i++) 
     {

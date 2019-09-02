@@ -1,4 +1,5 @@
 //note : 1 - based indexing throughout.
+// problem : https://www.spoj.com/problems/LCA/
 
 const int N = 1002;
 vector<int> g[N], segtree(8*N), euler, height(N);

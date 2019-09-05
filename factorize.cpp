@@ -28,3 +28,49 @@ map<int,int> factorize(int n)
 
   return mp;
 }
+
+// sieve method to get all count of all prime factors in all integers 1 to N
+//problem : https://codeforces.com/contest/546/problem/D
+
+const int N = 5e6 + 10;
+int pf[N], pdiv[N];
+
+//pf[i] = total count of prime factors of i, eg. pf[24] = 24, because 24 = 2 * 2 * 3 * 3
+// pdiv[i] = least prime divisor of i, for eg. pdiv[10] = 2, pdiv[7] = 7
+void sieve()
+{
+   for(int i = 2; i < N; i++)
+   {
+      if(pdiv[i] == 0)
+      {
+         for(int j = i; j < N; j += i)
+         {
+            pdiv[j] = i;
+         }
+      }
+   }
+
+   for(int i = 2; i < N; i++)
+   {
+     pf[i] = 1 + pf[i / pdiv[i]];
+   }
+
+   for(int i = 1; i < N; i++)
+    pf[i] += pf[i - 1];
+} 
+
+int main()
+{ 
+  sieve();
+  int t, a, b;
+
+  scanf("%d", &t);
+
+  while(t--)
+  {
+     scanf("%d %d", &a, &b);
+     printf("%d\n", pf[a] - pf[b]);
+  }  
+  
+  return 0;
+}

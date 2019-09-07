@@ -1,14 +1,9 @@
-#include<bits/stdc++.h>
- using namespace std;
-
-#define  int  long long
-const int mod = 1e9 + 7;
 /* this was asked in HE problemsetter hiring contest, in sept., 2019.
 
    Problem : Given two arrays A and B, both of size N, count pairs of indices
              (i, j) such that gcd(A[i], B[j]) != 1.
 
-   constraint : 1 <= N <= 10^5
+   constraints : 1 <= N <= 10^5
                 1 <= A[i], B[i] <= 10^6
 */
 
@@ -16,18 +11,20 @@ const int mod = 1e9 + 7;
 // idea : https://codeforces.com/blog/entry/55822?#comment-395305
 // PIE : https://www.geeksforgeeks.org/inclusion-exclusion-principle-and-programming-applications/
 
+#include<bits/stdc++.h>
+ using namespace std;
+
+#define  int  long long
 const int N = 1e5 + 5;
 const int MAXE = 1e6 + 5;
 
-int A[N], B[N], cnt[MAXE], n;
-vector<int> pf[MAXE];
-//pf[x] : prime factors of x without multiplicity
-//cnt[x]: in how many elements of array A did x appear as a factor
+int A[N], B[N], n, cnt[MAXE]; //cnt[x]: in how many elements of array A did x appear as a factor
+vector<int> pf[MAXE]; //pf[x] : prime factors of x without multiplicity
+
 void sieve()
 {
-
    for(int i = 0; i < MAXE; i++)
-    pf[i].clear();
+     pf[i].clear();
 
    for(int i = 2; i < MAXE; i++)
    {

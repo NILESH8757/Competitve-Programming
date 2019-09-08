@@ -11,7 +11,7 @@ vector<int> ts; // stores topologically sorted vetices
 int indeg[N]; // stores indegree of vertices
 int lpt[N];  //lpt[i]=longest path to node i;
 int n;
-// using bfs
+// using bfs also know as Kahn’s algorithm for Topological Sorting
 void topologicalSort()
 {
 	memset(indeg,0,sizeof(indeg));
@@ -73,4 +73,23 @@ int main()
 	}
  
   return 0;	
+}
+
+/***************checking cycle in directed graph using dfs. If cycle is present, topological sorting is not possible ******/
+vector<int> color(N);
+bool cycle;
+
+void dfs(int u) // checking for acyclicity
+{
+    color[u] = 1; // mark grey, i.e first time visited.
+    for(int v: g[u])
+    {
+        if(color[v] == 0) // this node's white means still not visited
+        {
+            dfs(v);
+        }
+        else if(color[v] == 1) // back edge found!
+          cycle = true;
+    }
+    color[u] = 2; //finally marked black in the last visit to the node.
 }

@@ -93,3 +93,5 @@ void dfs(int u) // checking for acyclicity
     }
     color[u] = 2; //finally marked black in the last visit to the node.
 }
+
+// if it's DAG, find a topological order as given here : https://cp-algorithms.com/graph/topological-sort.html

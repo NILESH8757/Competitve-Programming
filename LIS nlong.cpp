@@ -2,7 +2,7 @@
 
 int LIS(vector<int>& nums) 
 {
-    vector<int> res; // it doesn't store LIS. Stores just the length of LIS at the end of algorithm
+    vector<int> res; // it doesn't store LIS.It's size == length of LIS at the end of algorithm
     
     for(int i = 0; i < nums.size(); i++) 
     {

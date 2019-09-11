@@ -1,8 +1,8 @@
-// Longest Increasing Subsequence
+// Longest (strictly) Increasing Subsequence
 
 int LIS(vector<int>& nums) 
 {
-    vector<int> res; // this array shall may/may not contain any valid LIS at the end, but it's sizse will denote lenght of lis
+    vector<int> res; // this array shall may/may not contain any valid LIS at the end, but it's size will denote lenght of lis
     
     for(int i = 0; i < nums.size(); i++) 
     {

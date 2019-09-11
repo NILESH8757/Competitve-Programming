@@ -2,11 +2,11 @@
 
 int LIS(vector<int>& nums) 
 {
-    vector<int> res; // this array shall may/may not contain any valid LIS at the end, but it's size will denote lenght of lis
+    vector<int> res; // it doesn't store LIS. Stores just the length of LIS at the end of algorithm
     
     for(int i = 0; i < nums.size(); i++) 
     {
-        auto it = lower_bound(res.begin(), res.end(), nums[i]);
+        auto it = lower_bound(res.begin(), res.end(), nums[i]); // use upper_bound for Longest non-decreasing subsequence
         if(it == res.end()) 
           res.push_back(nums[i]);
         else 

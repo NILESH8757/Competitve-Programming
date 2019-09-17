@@ -4,6 +4,7 @@
 /*
   Problem: spoj's ORDERSET
   link: https://www.spoj.com/problems/ORDERSET/
+  cleaner solution : http://ideone.com/9uklMf (by adamant)
 */
 
 #include<bits/stdc++.h>

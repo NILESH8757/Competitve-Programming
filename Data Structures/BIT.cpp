@@ -52,3 +52,4 @@ int main()
 }
 // (range Update + range query) problem: https://codeforces.com/contest/283/problem/A
 // solution : https://codeforces.com/contest/283/submission/60725008
+// simpler solution : https://codeforces.com/contest/283/submission/60727036

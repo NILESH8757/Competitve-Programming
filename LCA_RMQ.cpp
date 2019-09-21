@@ -65,8 +65,8 @@ int32_t main()
 	  int n;
 	  cin >> n;
 
-      for(int i = 1; i <= n; i++)
-      	g[i].clear();
+          for(int i = 1; i <= n; i++)
+      	   g[i].clear();
 
 	  for(int i = 1; i <= n; i++)
 	  {
@@ -83,6 +83,7 @@ int32_t main()
 
 	  dfs(1);
 	  vector<int> oc(n + 1, -1);
+	  
 	  for(int i = 1; i < euler.size(); i++)
 	  {
 	  	 if(oc[euler[i]] == -1)

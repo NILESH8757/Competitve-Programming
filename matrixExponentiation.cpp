@@ -1,19 +1,13 @@
 //Taken from Ashishgup's repo
 //https://github.com/Ashishgup1/Competitive-Coding/blob/master/Matrix%20Struct.cpp
 //problem: https://codeforces.com/contest/1117/problem/D
+
 #include<bits/stdc++.h>
  using namespace std;
 
-#define io ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
-#define int long long
-#define endl '\n'
-#define eps  1e-9
-const double pi=acos(-1);
 const int MOD=1e9+7;
-//____________________
-
-int n,m;
 const int SZ = 105;
+int n,m;
 
 int add(int a, int b)
 {

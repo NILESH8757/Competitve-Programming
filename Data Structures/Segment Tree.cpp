@@ -92,3 +92,13 @@ int main()
    }
   return 0;
 }
+// Lazy propagation code for simple range sum update, range sum query : http://ideone.com/6o0Kml
+
+// problem 1 : https://www.codechef.com/problems/FLIPCOIN   [ simple lazy propagation ]
+// solution 1 : https://www.codechef.com/viewsolution/20283560
+
+// problem 2 : https://www.spoj.com/problems/GSS1/ [ an interesting segtree problem ]
+// solution 2 : http://ideone.com/0crQvB
+
+// problem 3 : https://www.spoj.com/problems/HORRIBLE/ [ very easy lazy propagation for beginner ]
+// solution 3 : http://ideone.com/F4Ugyi

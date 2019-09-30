@@ -67,3 +67,6 @@ int32_t main()
 
  return 0;
 }
+
+// problem 2 : https://codeforces.com/contest/514/problem/C [changing a char of string and looking for it in dictonary]
+// solution 2 : https://codeforces.com/contest/514/submission/61571617

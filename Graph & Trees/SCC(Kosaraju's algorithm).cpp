@@ -8,3 +8,6 @@
 
 // problem 3 : https://www.spoj.com/problems/BREAK/
 // solution 3 : http://ideone.com/QoWS56
+
+// problem 4 : https://codeforces.com/problemset/problem/427/C
+// solution 4 : https://codeforces.com/contest/427/submission/61716702

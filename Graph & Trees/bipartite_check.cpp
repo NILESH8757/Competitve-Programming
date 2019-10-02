@@ -44,3 +44,4 @@ bool bipartite_check()
 }
 
 // problem 1 : BUGLIFE (spoj)
+// problem 2 : https://codeforces.com/problemset/problem/687/A

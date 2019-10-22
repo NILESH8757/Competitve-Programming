@@ -70,3 +70,9 @@ signed main()
 
      return 0 ;
  }
+//-----------------------------------------Another variation of line sweep algorithm-------------------
+/*
+  Given N intervals and a value k, remove minimal no. of intervals such that no points has cover of more than k intervals
+*/
+// problem : https://codeforces.com/contest/1249/problem/D2
+// solution : https://codeforces.com/contest/1249/submission/63202336

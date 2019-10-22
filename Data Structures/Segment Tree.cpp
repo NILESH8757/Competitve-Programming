@@ -102,3 +102,6 @@ int main()
 
 // problem 3 : https://www.spoj.com/problems/HORRIBLE/ [ very easy lazy propagation for beginner ]
 // solution 3 : http://ideone.com/F4Ugyi
+
+// Problem 4 : https://codeforces.com/contest/242/problem/E [ Nice lazy progpagation]
+// Solution 4 : https://codeforces.com/contest/242/submission/63119987

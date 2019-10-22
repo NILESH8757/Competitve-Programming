@@ -104,4 +104,4 @@ int main()
 // solution 3 : http://ideone.com/F4Ugyi
 
 // Problem 4 : https://codeforces.com/contest/242/problem/E [ Nice lazy progpagation]
-// Solution 4 : https://codeforces.com/contest/242/submission/63119987
+// Solution 4 : https://codeforces.com/contest/242/submission/63120391

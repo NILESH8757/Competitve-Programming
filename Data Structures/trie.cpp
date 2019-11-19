@@ -51,3 +51,5 @@ int maxxor(int x)
 }
 
 // problem : https://codeforces.com/problemset/problem/706/D
+// Probme 2 : https://www.codechef.com/CDCRFT14/problems/SUBBXOR [ count of subarrays with xor less than k ]
+// Solution 2 : https://www.codechef.com/viewsolution/27949729

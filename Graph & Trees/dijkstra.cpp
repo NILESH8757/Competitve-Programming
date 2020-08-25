@@ -6,11 +6,9 @@ const int MAXN=5e5+5;
 typedef pair<int,int> pp;
 vector<vector<pp > > adj;
 int d[MAXN],n;
-bool mark[MAXN];
 void dijkstra(int v)
 {
     memset(d,inf,sizeof(d));
-    memset(mark,false,sizeof(mark));
     d[v] = 0;
     int u;
     priority_queue<pp,vector<pp >, greater<pp > > pq;
@@ -21,12 +19,7 @@ void dijkstra(int v)
     {
        u = pq.top().second;
        pq.pop();
-        
-       if(mark[u])
-         continue;
-        
-       mark[u] = true;
-        
+    
        for(auto p : adj[u]) //adj[v][i] = pair(vertex, weight)
         if(d[p.first] > d[u] + p.second)
         {

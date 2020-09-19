@@ -75,11 +75,17 @@ int main()
   return 0;	
 }
 
-/***************checking cycle in directed graph using dfs. If cycle is present, topological sorting is not possible ******/
-vector<int> color(N);
+/***************checking cycle in directed graph using dfs. If cycle is present, topological sorting is not possible else build topo-sort******/
+// Problem : https://cses.fi/problemset/task/1679/
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1E5 + 3;
+vector<int> g[N];
+vector<int> color(N), ans;
 bool cycle;
 
-void dfs(int u) // checking for acyclicity
+void dfs(int u) // checking for acyclicity and building top-list simultaneously
 {
     color[u] = 1; // mark grey, i.e first time visited.
     for(int v: g[u])
@@ -92,6 +98,33 @@ void dfs(int u) // checking for acyclicity
           cycle = true;
     }
     color[u] = 2; //finally marked black in the last visit to the node.
+    ans.push_back(u);
 }
 
-// if it's DAG, find a topological order as given here : https://cp-algorithms.com/graph/topological-sort.html
+int32_t main() 
+{
+  int n, m;
+  scanf("%d %d", &n, &m);
+
+  for(int i = 0; i < m; i++){
+     int a, b;
+     scanf("%d %d", &a, &b);
+     g[a].push_back(b);
+  }
+  
+  for(int i = 1; i <= n; i++){
+      if(color[i] == 0)
+         dfs(i);
+  }
+
+  if(cycle){
+     printf("IMPOSSIBLE\n");
+  } else{
+     reverse(ans.begin(), ans.end()); 
+     for(int node : ans)
+       printf("%d ", node);
+  }
+  return 0;
+}
+
+// source : https://cp-algorithms.com/graph/topological-sort.html

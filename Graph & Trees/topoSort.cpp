@@ -77,6 +77,7 @@ int main()
 
 /***************checking cycle in directed graph using dfs. If cycle is present, topological sorting is not possible else build topo-sort******/
 // Problem : https://cses.fi/problemset/task/1679/
+// simple solution using bfs : https://github.com/himanshujaju/cses-fi-solutions/blob/master/1679.cc
 
 #include<bits/stdc++.h>
 using namespace std;

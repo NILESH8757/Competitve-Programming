@@ -37,3 +37,6 @@ void merge_set(int a,int b)  //union by rank
   if(rnk[a]==rnk[b])
     rnk[a]++;
 }
+
+// another problem : https://cses.fi/problemset/result/1045648/
+// soln. : https://cses.fi/paste/808deed8cf7122c8ff490/

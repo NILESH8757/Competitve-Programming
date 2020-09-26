@@ -1,42 +1,62 @@
 //motivation problem: https://www.codechef.com/problems/DISHOWN
 
-const int N=1e4+5;
-int par[N],rnk[N],n,connected,s[N],best[N];
+// following code is the soln of :  https://cses.fi/problemset/task/1676
 
-void init()
-{
-  for(int v=1;v<=n;v++)
-  {
-    par[v]=v;
-    rnk[v]=0;
-  }
-  connected=n;
+#include<bits/stdc++.h>
+#define int long long
+#define nl '\n'
+ using namespace std;
+
+const int N = 1E5 + 5;
+
+int sz[N], par[N], n, comp, maxsize;
+
+void init(){
+   comp = n;
+   for(int i = 1; i <= n; i++){
+       sz[i] = 1;
+       par[i] = i;
+   }
 }
 
-int find_set(int v)//find() operation with path-compression optimization
-{
-  if(v==par[v])
-    return v;
-  return par[v]=find_set(par[v]);
+int getParent(int x){
+   return x == par[x] ? x : par[x] = getParent(par[x]);
 }
 
-void merge_set(int a,int b)  //union by rank
-{
-  a=find_set(a);
-  b=find_set(b);
-  if(a==b) 
-    return;
+void Unite(int a, int b){
+    int pa = getParent(a);
+    int pb = getParent(b);
+    if(pa == pb) return;
 
-  if(rnk[a]>rnk[b])
-   par[b]=a;
-  else
-   par[a]=b;
+    comp--;
+
+    if(sz[pa] < sz[pb]){
+       swap(pa, pb);
+    }
+
+    sz[pa] += sz[pb];
+    sz[pb] = 0;
+    par[pb] = pa;
+    maxsize = max(maxsize, sz[pa]);
+}
+
+int32_t main() 
+{
+  int m;
+  cin >> n >> m;
   
-  connected--;
+  init();
 
-  if(rnk[a]==rnk[b])
-    rnk[a]++;
+  for(int i = 0; i < m; i++){
+     int u, v;
+     cin >> u >> v;
+     Unite(u, v);
+     cout << comp << ' ' << maxsize << nl;
+  }
+
+  return 0;
 }
+
 
 // another problem : https://cses.fi/problemset/result/1045648/
 // soln. : https://cses.fi/paste/808deed8cf7122c8ff490/

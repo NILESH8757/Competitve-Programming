@@ -45,3 +45,7 @@ int main()
 
     cout<<endl;
   }
+/*
+Also, no. of dearrangements of n distinct object is, 
+   D(n) = (n − 1)(D(n − 1) + D(n − 2)).
+*/

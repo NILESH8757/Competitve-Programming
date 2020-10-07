@@ -105,3 +105,5 @@ int main()
 
 // Problem 4 : https://codeforces.com/contest/242/problem/E [ Nice lazy progpagation]
 // Solution 4 : https://codeforces.com/contest/242/submission/63120391
+
+// Problem 5 : https://www.codechef.com/problems/MULTQ3  [Another nice lazy propagation]

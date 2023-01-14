@@ -70,9 +70,9 @@ void trie_insert(string &s){
     for(char c: s){
         int idx = c - 'a';
         if(!cur->next[idx])
-			cur->next[idx] = new trie();
-		cur = cur->next[idx];
-		cur->cnt++;
+	  cur->next[idx] = new trie();
+	cur = cur->next[idx];
+	cur->cnt++;
     }
 }
  
@@ -82,8 +82,8 @@ int trie_count_prefix(string &s){
     for(char c: s){
         int idx = c - 'a';
         if(cur->next[idx] != NULL){
-          cur = cur->next[idx];
-          ans = min(ans, cur->cnt);
+            cur = cur->next[idx];
+            ans = min(ans, cur->cnt);
         } else {
             ans = 0;
             break;
@@ -91,6 +91,7 @@ int trie_count_prefix(string &s){
     }
     return ans;
 }
+
 int main(){
    int n, q;
    string s;

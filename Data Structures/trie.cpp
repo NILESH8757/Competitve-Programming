@@ -55,7 +55,7 @@ int maxxor(int x)
 // Solution 2 : https://www.codechef.com/viewsolution/27949729
 
 // Problem 3: https://www.spoj.com/problems/ADAINDEX/
-// Solution 3: 
+// Solution 3 (inspired by Ashishgup's code above):
 #include<bits/stdc++.h>
 using namespace std;
  

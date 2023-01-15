@@ -22,7 +22,7 @@ void bfs(int u) {
         for(auto node: adj[v]) {
             if (!vis[node]) {
                 ways[node] += ways[v];
-                level[node] = 1 + ways[v];
+                level[node] = 1 + level[v];
                 q.push(node);
                 vis[node] = true;
             } else {

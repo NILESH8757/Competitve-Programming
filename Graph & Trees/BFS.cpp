@@ -29,7 +29,7 @@ void bfs(int u) {
                 if(level[v] + 1 == level[node]) {
                     ways[node] += ways[v];
                 }
-			         }
+	    }
         }
     }
 }

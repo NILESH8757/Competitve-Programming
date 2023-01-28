@@ -108,3 +108,61 @@ int main(){
    }
    return 0;
 } 
+
+// problem 4: https://atcoder.jp/contests/abc287/tasks/abc287_e
+// solution 4
+
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef struct data{
+    data* next[26];
+    int cnt = 0;
+} trie;
+trie* head;
+ 
+void trie_insert(string &s){
+    trie* cur = head;
+    for(char c: s){
+        int idx = c - 'a';
+        if(!cur->next[idx])
+	  cur->next[idx] = new trie();
+	cur = cur->next[idx];
+	cur->cnt++;
+    }
+}
+ 
+int find_lcp(string &s){
+    trie* cur = head;
+    int ans = INT_MAX;
+    for(int i = 0; i < s.size(); i++){
+        int idx = s[i] - 'a';
+        if(cur->next[idx] != NULL){
+            cur = cur->next[idx];
+            if(min(ans, cur->cnt) == 1){
+                return i;
+            };
+        } else {
+            return i;
+        }
+    }
+    return s.size();
+}
+int main(){
+  int n;
+  cin >> n;
+  head = new trie();
+  vector<string> strs;
+  for(int i = 0; i < n; i++){
+      string s;
+      cin >> s;
+      trie_insert(s);
+      strs.push_back(s);
+  }
+  
+  for(string s: strs){
+      cout << find_lcp(s) << endl;
+  }
+  
+  return 0;
+}

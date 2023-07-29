@@ -53,7 +53,6 @@ int maxxor(int x)
 // problem : https://codeforces.com/problemset/problem/706/D
 // Probme 2 : https://www.codechef.com/CDCRFT14/problems/SUBBXOR [ count of subarrays with xor less than k ]
 // Solution 2 : https://www.codechef.com/viewsolution/27949729
-
 // Problem 3: https://www.spoj.com/problems/ADAINDEX/
 // Solution 3 (inspired by Ashishgup's code above):
 #include<bits/stdc++.h>
@@ -166,3 +165,6 @@ int main(){
   
   return 0;
 }
+
+//problem 5: https://codeforces.com/contest/665/problem/E [count subarrays with xor atleast k] 
+//problem 6: https://leetcode.com/problems/count-pairs-with-xor-in-a-range/description/ [count pairs with xor in range]

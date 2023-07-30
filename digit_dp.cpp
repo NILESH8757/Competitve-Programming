@@ -67,3 +67,4 @@ public:
 //Problem2 (same as problem1) includes 0 (but in adhoc manner):  https://cses.fi/problemset/task/2220/
 //Problem3 (without use of zero flag): https://atcoder.jp/contests/dp/tasks/dp_s 
 //Problem4 (without use of zero flag): https://leetcode.com/problems/count-of-integers 
+//Problem5: (digit dp with bitmask): https://leetcode.com/problems/count-special-integers

@@ -13,4 +13,12 @@ Solutions: https://cses.fi/paste/25f25262e0d3bb3f666bb5/
 Problem: https://cses.fi/problemset/result/6713218/ [Counting Paths]
 Solution: https://cses.fi/paste/396eda22aee3530c666f82/  
 
+# Small to large merge technique
+Problem: https://cses.fi/problemset/task/1139/ [Distinct Colors] // find no. of distinct values in subtree of each node i
+Solution : https://cses.fi/paste/ffc22cc3a4381ee76676d1/ 
+
+# flattening the tree and doing (range update, point query) using fenwick tree:
+ Problem: https://cses.fi/problemset/task/1138/ [Path Queries I]
+ Solution: https://cses.fi/paste/695c056f2659fd1f6674f3/
+
 

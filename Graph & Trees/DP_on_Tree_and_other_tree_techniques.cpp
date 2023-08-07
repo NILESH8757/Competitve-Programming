@@ -21,4 +21,7 @@ Solution : https://cses.fi/paste/ffc22cc3a4381ee76676d1/
  Problem: https://cses.fi/problemset/task/1138/ [Path Queries I]
  Solution: https://cses.fi/paste/695c056f2659fd1f6674f3/
 
+ Same technique using segment tree: 
+ https://github.com/NILESH8757/Competitve-Programming/blob/master/Graph%20%26%20Trees/Tree%20Query%20Technique.cpp
+
 

@@ -4,17 +4,19 @@
 using namespace std;
 
 // recursive
+
 long long modPower(long long base, long long power, long long mod) {
     if (power == 0)
         return 1;
     long long res = modPower(base, power / 2);
-    if (power % 2)
-        return (res * res * base) % mod;
-    else
-        return (res * res) % mod;
+    res = (res * res) % mod;
+    if(power & 1LL) 
+        res = (res * base) % mod;
+    return res;
 }
 
 // iterative
+
 int modexp(int base, int exp,int M) {
     //(base ^ exp ) % M
     int res = 1LL;
